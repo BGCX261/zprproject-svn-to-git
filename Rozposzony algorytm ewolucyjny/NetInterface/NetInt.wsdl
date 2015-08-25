@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="NetInt"
+ targetNamespace="urn:hell/NetInt.wsdl"
+ xmlns:tns="urn:hell/NetInt.wsdl"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns="urn:hell"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:hell"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:hell"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+ </schema>
+
+</types>
+
+<message name="setEndPointRequest">
+ <part name="endPoint" type="xsd:string"/>
+</message>
+
+<message name="setEndPointResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="exchangeSpecimensRequest">
+ <part name="specimentList" type="xsd:string"/>
+</message>
+
+<message name="exchangeSpecimensResponse">
+ <part name="result" type="xsd:string"/>
+</message>
+
+<message name="getStatusRequest">
+</message>
+
+<message name="getStatusResponse">
+ <part name="result" type="xsd:string"/>
+</message>
+
+<message name="setParameterRequest">
+ <part name="parameterChange" type="xsd:string"/>
+</message>
+
+<message name="setParameterResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="runAlgorithmRequest">
+</message>
+
+<message name="runAlgorithmResponse">
+ <part name="result" type="xsd:boolean"/>
+</message>
+
+<message name="setConectionsRequest">
+ <part name="conections" type="xsd:string"/>
+</message>
+
+<message name="setConectionsResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="sendConectionsProblemRequest">
+ <part name="conectionProblem" type="xsd:string"/>
+</message>
+
+<message name="sendConectionsProblemResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="registNodeRequest">
+ <part name="endPoint" type="xsd:string"/>
+</message>
+
+<message name="registNodeResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="unRegistNodeRequest">
+ <part name="endPoint" type="xsd:string"/>
+</message>
+
+<message name="unRegistNodeResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="getSpecimensRequest">
+</message>
+
+<message name="getSpecimensResponse">
+ <part name="result" type="xsd:string"/>
+</message>
+
+<message name="getAppStatusRequest">
+</message>
+
+<message name="getAppStatusResponse">
+ <part name="result" type="xsd:string"/>
+</message>
+
+<message name="setAppParameterRequest">
+ <part name="parameterChange" type="xsd:string"/>
+</message>
+
+<message name="setAppParameterResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<message name="newTaskRequest">
+ <part name="task" type="xsd:string"/>
+</message>
+
+<message name="newTaskResponse">
+ <part name="result" type="xsd:string"/>
+</message>
+
+<message name="getConnectedNodesRequest">
+</message>
+
+<message name="getConnectedNodesResponse">
+ <part name="conections" type="xsd:string"/>
+</message>
+
+<message name="sendMessageRequest">
+ <part name="message" type="xsd:string"/>
+</message>
+
+<message name="sendMessageResponse">
+ <part name="result" type="xsd:int"/>
+</message>
+
+<portType name="NetIntPortType">
+ <operation name="setEndPoint">
+  <documentation>Service definition of function ns__setEndPoint</documentation>
+  <input message="tns:setEndPointRequest"/>
+  <output message="tns:setEndPointResponse"/>
+ </operation>
+ <operation name="exchangeSpecimens">
+  <documentation>Service definition of function ns__exchangeSpecimens</documentation>
+  <input message="tns:exchangeSpecimensRequest"/>
+  <output message="tns:exchangeSpecimensResponse"/>
+ </operation>
+ <operation name="getStatus">
+  <documentation>Service definition of function ns__getStatus</documentation>
+  <input message="tns:getStatusRequest"/>
+  <output message="tns:getStatusResponse"/>
+ </operation>
+ <operation name="setParameter">
+  <documentation>Service definition of function ns__setParameter</documentation>
+  <input message="tns:setParameterRequest"/>
+  <output message="tns:setParameterResponse"/>
+ </operation>
+ <operation name="runAlgorithm">
+  <documentation>Service definition of function ns__runAlgorithm</documentation>
+  <input message="tns:runAlgorithmRequest"/>
+  <output message="tns:runAlgorithmResponse"/>
+ </operation>
+ <operation name="setConections">
+  <documentation>Service definition of function ns__setConections</documentation>
+  <input message="tns:setConectionsRequest"/>
+  <output message="tns:setConectionsResponse"/>
+ </operation>
+ <operation name="sendConectionsProblem">
+  <documentation>Service definition of function ns__sendConectionsProblem</documentation>
+  <input message="tns:sendConectionsProblemRequest"/>
+  <output message="tns:sendConectionsProblemResponse"/>
+ </operation>
+ <operation name="registNode">
+  <documentation>Service definition of function ns__registNode</documentation>
+  <input message="tns:registNodeRequest"/>
+  <output message="tns:registNodeResponse"/>
+ </operation>
+ <operation name="unRegistNode">
+  <documentation>Service definition of function ns__unRegistNode</documentation>
+  <input message="tns:unRegistNodeRequest"/>
+  <output message="tns:unRegistNodeResponse"/>
+ </operation>
+ <operation name="getSpecimens">
+  <documentation>Service definition of function ns__getSpecimens</documentation>
+  <input message="tns:getSpecimensRequest"/>
+  <output message="tns:getSpecimensResponse"/>
+ </operation>
+ <operation name="getAppStatus">
+  <documentation>Service definition of function ns__getAppStatus</documentation>
+  <input message="tns:getAppStatusRequest"/>
+  <output message="tns:getAppStatusResponse"/>
+ </operation>
+ <operation name="setAppParameter">
+  <documentation>Service definition of function ns__setAppParameter</documentation>
+  <input message="tns:setAppParameterRequest"/>
+  <output message="tns:setAppParameterResponse"/>
+ </operation>
+ <operation name="newTask">
+  <documentation>Service definition of function ns__newTask</documentation>
+  <input message="tns:newTaskRequest"/>
+  <output message="tns:newTaskResponse"/>
+ </operation>
+ <operation name="getConnectedNodes">
+  <documentation>Service definition of function ns__getConnectedNodes</documentation>
+  <input message="tns:getConnectedNodesRequest"/>
+  <output message="tns:getConnectedNodesResponse"/>
+ </operation>
+ <operation name="sendMessage">
+  <documentation>Service definition of function ns__sendMessage</documentation>
+  <input message="tns:sendMessageRequest"/>
+  <output message="tns:sendMessageResponse"/>
+ </operation>
+</portType>
+
+<binding name="NetInt" type="tns:NetIntPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="setEndPoint">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="exchangeSpecimens">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="getStatus">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="setParameter">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="runAlgorithm">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="setConections">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="sendConectionsProblem">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="registNode">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="unRegistNode">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="getSpecimens">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="getAppStatus">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="setAppParameter">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="newTask">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="getConnectedNodes">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="sendMessage">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:hell" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="NetInt">
+ <documentation>gSOAP 2.7.15 generated service definition</documentation>
+ <port name="NetInt" binding="tns:NetInt">
+  <SOAP:address location="http://localhost:80"/>
+ </port>
+</service>
+
+</definitions>
